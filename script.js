@@ -32,28 +32,27 @@ let questionsLTO = [
 // Lesson for  Learning to Describe Business/ LDB
 let questionsLDB = [
     {
-        question: "What is this person asking about?",
-        example: "",
-        option1: "",
-        option2: "",
-        option3: "",
-        answer: ""
+        question: "What is this person talking about?",
+        example: "Me gustaría conocer su modelo de negocio.",
+        option1: "I would not like to know about your job.",
+        option2: "I would like to know about your life.",
+        option3: "I would like to know your business model.",
+        answer: "I would like to know your business model."
     },
     {
         question: "How do you respond to this question?",
-        example: "",
-        option1: "",
-        option2: "",
-        option3: "",
-        answer: ""
+        example: "¿Quiénes son tus competidores?",
+        option1: "Mis competidores son Fry's y Sprouts.",
+        option2: "Mis competidores son mis amigos.",
+        option3: "Mis competidores son mi familia.",
+        answer: "Mis competidores son Fry's y Sprouts."
     }
 ]
 
 // Storing user answers
 let userAnswer = [];
-// Storing and keeping track of questions
+// Storing and keeping track of questions for each sub-lesson
 let index = 0;
-let currQuestionLTO = questionsLTO;
 let currQuestionLDB = questionsLDB;
 
 // Go to the Beginner Phone Conversation lesson page
@@ -72,7 +71,6 @@ function unselectableLessons() {
 // Learning option 1: LTO
 function learnTakeOrders() {
     console.log("click");
-    //No code yet
 }
 
 // Learning option 2: LDB
@@ -84,12 +82,12 @@ function learnDescribeBusiness() {
 // Necessary code for questions of the lessons to work
 // Code for LTO
 function jumpQuestionLTO() {
-    // No code yet
     if (index >= questionsLTO.length) {
         //checkAnswer();
         //return;
     }
-    // code here needed
+    
+    let currQuestionLTO = questionsLTO[index];
 }
 
 function submitAnswer(event) {
@@ -97,6 +95,6 @@ function submitAnswer(event) {
     // Need more code
 }
 
-function checkAnswer() {
+function checkAnswerLTO() {
     //No code yet
 }
