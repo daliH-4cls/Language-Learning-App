@@ -109,3 +109,8 @@ main h2 {
     color: #7f8c8d;
     font-weight: bold;
 }
+
+span {
+    color: rgb(141, 141, 141);
+    font-size: 15px;
+}

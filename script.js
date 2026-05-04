@@ -55,12 +55,6 @@ let userAnswer = [];
 let index = 0;
 let currQuestionLDB = questionsLDB;
 
-// Go to the Beginner Phone Conversation lesson page
-function learnPhoneConverse() {
-    console.log("click");
-    // No code yet
-}
-
 // Warning/ message for N/A lessons on index page
 function unselectableLessons() {
     console.log("click");
@@ -83,10 +77,11 @@ function learnDescribeBusiness() {
 // Code for LTO
 function jumpQuestionLTO() {
     if (index >= questionsLTO.length) {
-        //checkAnswer();
-        //return;
+        checkAnswer();
+        return;
     }
     
+    // Keeping track of LTO questions
     let currQuestionLTO = questionsLTO[index];
 }
 
@@ -96,5 +91,12 @@ function submitAnswer(event) {
 }
 
 function checkAnswerLTO() {
-    //No code yet
+    let  numCorrect = 0;
+    for (let i = 0; i < userAnswers.length; i++) {
+        let userAnswer = userAnswers[i];
+        let question = questions[i];
+        if (userAnswer == question.answer) {
+            numCorrect++;
+        }
+    }
 }
