@@ -62,15 +62,11 @@ function unselectableLessons() {
     alert("Not available");
 }
 
-// Learning option 1: LTO
+// Onclick learning option 1: LTO
 function learnTakeOrders() {
-    console.log("click");
-}
+    console.log("Lesson Learn to Take Orders selected");
 
-// Learning option 2: LDB
-function learnDescribeBusiness() {
-    console.log("click");
-    //No Code yet
+    jumpQuestionLTO();
 }
 
 // Necessary code for questions of the lessons to work
@@ -83,20 +79,84 @@ function jumpQuestionLTO() {
     
     // Keeping track of LTO questions
     let currQuestionLTO = questionsLTO[index];
+
+    // Placing in the JS text to HTML text
+    let questionElement = document.getElementById("questionForLTO");
+    questionElement.innerText = currQuestionLTO.question;
+    questionElement.style.color = "black";
+
+    let exampleElement = document.getElementById("exampleLTO");
+    exampleElement.innerText = currQuestionLTO.example;
+    exampleElement.style.color = "black";
+
+    let option1Text = document.getElementById("option1text");
+    option1Text.innerText = currQuestionLTO.option1;
+    option1Text.style.color = "black";
+
+    let option2Text = document.getElementById("option2text");
+    option2Text.innerText = currQuestionLTO.option2;
+    option2Text.style.color = "black";
+
+    let option3Text = document.getElementById("option3text");
+    option3Text.innerText = currQuestionLTO.option3;
+    option3Text.style.color = "black";
 }
 
 function submitAnswer(event) {
     event.preventDefault();
-    // Need more code
+
+    let option1 = document.getElementById("option1");
+    let option2 = document.getElementById("option2");
+    let option3 = document.getElementById("option3");
+
+     if (option1.checked) {
+        console.log("Option1 picked");
+        userAnswer.push(questionsLTO.option1);
+        option1.checked = false;
+    }
+    else if (option2.checked) {
+        console.log("Option2 picked");
+        userAnswer.push(questionsLTO.option2);
+        option2.checked = false;
+    }
+    else if (option3.checked) {
+        console.log("Option3 picked");
+        userAnswer.push(questionsLTO.option3);
+        option3.checked = false;
+    }
+    else {
+        alert("Answer not selected...");
+        return;
+    }
+
+    // Code for answering question
+    index = index + 1;
+
+    jumpQuestionLTO();
 }
 
 function checkAnswerLTO() {
     let  numCorrect = 0;
     for (let i = 0; i < userAnswers.length; i++) {
         let userAnswer = userAnswers[i];
-        let question = questions[i];
+        let question = questionsLTO[i];
         if (userAnswer == question.answer) {
             numCorrect++;
         }
     }
+
+    //Standard protcal (correct answers and start over)
+    alert("You have " + numCorrect + "/ " + questionsLTO.length);
+
+    index = 0;
+    userAnswer = [];
+    jumpQuestionLTO();
+}
+
+// CODE BELOW FOR LDB- Pretty much same coding as LTO but for LDB
+
+// Onclick learning option 2: LDB
+function learnDescribeBusiness() {
+    console.log("click");
+    //No Code yet
 }
