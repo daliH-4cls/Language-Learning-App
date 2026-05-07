@@ -51,6 +51,7 @@ let questionsLDB = [
 
 // Storing user answers
 let userAnswer = [];
+
 // Storing and keeping track of questions for each sub-lesson
 let index = 0;
 let currQuestionLDB = questionsLDB;
@@ -138,19 +139,27 @@ function submitAnswer(event) {
 function checkAnswerLTO() {
     let  numCorrect = 0;
     for (let i = 0; i < userAnswer.length; i++) {
-        let Answer = userAnswer[i];
+        let answerSelected = userAnswer[i];
         let question = questionsLTO[i];
-        if (Answer == question.answer) {
+        if (answerSelected == question.answer) {
             numCorrect++;
         }
     }
 
     //Standard protcal (correct answers and start over)
-    alert("You have " + numCorrect + "/ " + questionsLTO.length);
+    alert("You have " + numCorrect + "/ " + questionsLTO.length + ". More lessons soon to arrive.");
 
     index = 0;
     userAnswer = [];
     jumpQuestionLTO();
+}
+
+// Find correct user answer (work in progress...)
+function choseCorrect() {
+    if {
+    option1Text.innerText = questionsLTO.answer;
+    option1.checked = true;
+    }
 }
 
 // CODE BELOW FOR LDB- Pretty much same coding as LTO but for LDB
