@@ -58,8 +58,8 @@ let currQuestionLDB = questionsLDB;
 // Warning/ message for N/A lessons on index page
 function unselectableLessons() {
     console.log("click");
-    // Needs more code
-    alert("Not available");
+    
+    alert("Not available, Phone Conversations only");
 }
 
 // Onclick learning option 1: LTO

@@ -38,3 +38,7 @@ nav {
 .nav-link.active {
     background-color: #34495e;
 }
+
+img {
+    max-width: 100%;
+}
