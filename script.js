@@ -73,7 +73,7 @@ function learnTakeOrders() {
 // Code for LTO
 function jumpQuestionLTO() {
     if (index >= questionsLTO.length) {
-        checkAnswer();
+        checkAnswerLTO();
         return;
     }
     
@@ -137,10 +137,10 @@ function submitAnswer(event) {
 
 function checkAnswerLTO() {
     let  numCorrect = 0;
-    for (let i = 0; i < userAnswers.length; i++) {
-        let userAnswer = userAnswers[i];
+    for (let i = 0; i < userAnswer.length; i++) {
+        let Answer = userAnswer[i];
         let question = questionsLTO[i];
-        if (userAnswer == question.answer) {
+        if (Answer == question.answer) {
             numCorrect++;
         }
     }
