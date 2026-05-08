@@ -113,12 +113,12 @@ function submitAnswer(event) {
      if (option1.checked) {
         console.log("Option1 picked");
         userAnswer.push(questionsLTO.option1);
-        option1.checked = false;
+        choseCorrectLTO1();
     }
     else if (option2.checked) {
         console.log("Option2 picked");
         userAnswer.push(questionsLTO.option2);
-        option2.checked = false;
+        choseCorrectLTO2();
     }
     else if (option3.checked) {
         console.log("Option3 picked");
@@ -154,13 +154,25 @@ function checkAnswerLTO() {
     jumpQuestionLTO();
 }
 
-// Find correct user answer (work in progress...)
-function choseCorrect() {
-    if {
-    option1Text.innerText = questionsLTO.answer;
-    option1.checked = true;
-    }
-}
+// Find correct user answer code function for option 1 and 2 of LTO
+// NEEDS FIXING
+// function choseCorrectLTO1() {
+   // if (option1 = answer) {
+   // option1.checked = true;
+   // }
+   // else {
+    // option1.checked = false;
+   // }
+// }
+
+// function choseCorrectLTO2() {
+    // if (option2.innerText = answer) {
+       // option2.checked = true;
+    // }
+    // else {
+       // option2.checked = false;
+    // } 
+// }
 
 // CODE BELOW FOR LDB- Pretty much same coding as LTO but for LDB
 
