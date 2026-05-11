@@ -25,7 +25,7 @@
                     <div class="lesson-card">
                         <div id="LTO">
                             <h4>Learn to Take Orders</h4>
-                            <p>Professional service ettiquite over phone</p>
+                            <p>Understanding orders over electronics</p>
 
                             <form>
                                 <p id="questionForLTO">Question: ...</p>
@@ -48,9 +48,9 @@
 
                             <br>
                             <div class="progress-bar">
-                                <div class="progress-fill" style="width: 0%"></div>
+                                <div id="progress-fill" style="width: 0%"></div>
                             </div>
-                            <span class="progress-text">Not Started - </span>
+                            <span id="progress-text">Not Started - </span>
                             <button onclick="learnTakeOrders()">Start</button>
                         </div>
                     </div>
@@ -66,20 +66,16 @@
                                 <p id="questionForLDB">Question: ...</p>
                                 <p id="exampleLDB">"..."</p>
                                 <div>
-                                    <input type="radio" name="options" id="option1">
+                                    <input type="radio" name="options" id="option1LDB">
                                     <span id="option1text">Option: ...</span>
                                 </div>
                                 <div>
-                                    <input type="radio" name="options" id="option2">
+                                    <input type="radio" name="options" id="option2LDB">
                                     <span id="option2text">Option: ...</span>
                                 </div>
                                 <div>
-                                    <input type="radio" name="options" id="option3">
+                                    <input type="radio" name="options" id="option3LDB">
                                     <span id="option3text">Option: ...</span>
-                                </div>
-                                <div>
-                                    <input type="radio" name="options" id="option4">
-                                    <span id="option4text">Option: ...</span>
                                 </div>
                                 <br>
                                 <button onclick="submitAnswer(event)">Submit</button>
@@ -87,9 +83,9 @@
                         
                         <br>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
+                            <div id="progress-fill-LDB" style="width: 0%"></div>
                         </div>
-                        <span class="progress-text">Not Started - </span>
+                        <span id="progress-text-LDB">Not Started - </span>
                         <button onclick="learnDescribeBusiness()">Start</button>
                     </div>
                 </div>

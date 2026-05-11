@@ -28,33 +28,34 @@ let questionsLTO = [
         answer: "I can not have peanuts, dairy and red meat."
     }
 ]
+// LTO is default, so non of the text has "LTO"
 
 // Lesson for  Learning to Describe Business/ LDB
 let questionsLDB = [
     {
-        question: "What is this person talking about?",
-        example: "Me gustaría conocer su modelo de negocio.",
-        option1: "I would not like to know about your job.",
-        option2: "I would like to know about your life.",
-        option3: "I would like to know your business model.",
-        answer: "I would like to know your business model."
+        questionLDB: "What is this person talking about?",
+        exampleLDB: "Me gustaría conocer su modelo de negocio.",
+        option1LDB: "I would not like to know about your job.",
+        option2LDB: "I would like to know about your life.",
+        option3LDB: "I would like to know your business model.",
+        answerLDB: "I would like to know your business model."
     },
     {
-        question: "How do you respond to this question?",
-        example: "¿Quiénes son tus competidores?",
-        option1: "Mis competidores son Fry's y Sprouts.",
-        option2: "Mis competidores son mis amigos.",
-        option3: "Mis competidores son mi familia.",
-        answer: "Mis competidores son Fry's y Sprouts."
+        questionLDB: "How do you respond to this question?",
+        exampleLDB: "¿Quiénes son tus competidores?",
+        option1LDB: "Mis competidores son Fry's y Sprouts.",
+        option2LDB: "Mis competidores son mis amigos.",
+        option3LDB: "Mis competidores son mi familia.",
+        answerLDB: "Mis competidores son Fry's y Sprouts."
     }
 ]
+// LDB is not default, so text will have "LDB"
 
 // Storing user answers
 let userAnswer = [];
 
 // Storing and keeping track of questions for each sub-lesson
 let index = 0;
-let currQuestionLDB = questionsLDB;
 
 // Warning/ message for N/A lessons on index page
 function unselectableLessons() {
@@ -103,6 +104,27 @@ function jumpQuestionLTO() {
     option3Text.style.color = "black";
 }
 
+// Find correct user answer code function for option 1 and 2 of LTO
+// NEEDS FIXING
+function choseCorrectLTO1() {
+   if (option1.innerText = questionsLTO.answer) {
+   option1.checked = true;
+   }
+   else {
+    option1.checked = false;
+   }
+}
+
+function choseCorrectLTO2() {
+    if (option2.innerText = questionsLTO.answer) {
+       option2.checked = true;
+    }
+    else {
+       option2.checked = false;
+    } 
+}
+
+// Checking answer correction and if an answer was chosen
 function submitAnswer(event) {
     event.preventDefault();
 
@@ -110,7 +132,7 @@ function submitAnswer(event) {
     let option2 = document.getElementById("option2");
     let option3 = document.getElementById("option3");
 
-     if (option1.checked) {
+    if (option1.checked) {
         console.log("Option1 picked");
         userAnswer.push(questionsLTO.option1);
         choseCorrectLTO1();
@@ -136,48 +158,35 @@ function submitAnswer(event) {
     jumpQuestionLTO();
 }
 
+// Storing progress (only once) REALLY NEEDS FIXING 
+function fillingProgressLTO() {
+    let fillProgress = document.getElementById("progress-fill");
+    fillProgress.style.backgroundColor = rgb(39, 174, 96);
+    fillProgress.style.width = "25%";
+
+    let textToStarted = document.getElementById("progress-text");
+    textToStarted.innerText = "25% complete";
+}
+
 function checkAnswerLTO() {
     let  numCorrect = 0;
     for (let i = 0; i < userAnswer.length; i++) {
         let answerSelected = userAnswer[i];
-        let question = questionsLTO[i];
-        if (answerSelected == question.answer) {
+        let storeQuestion = questionsLTO[i];
+        if (answerSelected == questionsLTO.answer) {
             numCorrect++;
         }
     }
 
-    //Standard protcal (correct answers and start over)
+    //Standard protcal (correct answers and start over + updated progress)
     alert("You have " + numCorrect + "/ " + questionsLTO.length + ". More lessons soon to arrive.");
 
+    fillingProgressLTO();
     index = 0;
     userAnswer = [];
     jumpQuestionLTO();
 }
 
-// Find correct user answer code function for option 1 and 2 of LTO
-// NEEDS FIXING
-// function choseCorrectLTO1() {
-   // if (option1 = answer) {
-   // option1.checked = true;
-   // }
-   // else {
-    // option1.checked = false;
-   // }
-// }
-
-// function choseCorrectLTO2() {
-    // if (option2.innerText = answer) {
-       // option2.checked = true;
-    // }
-    // else {
-       // option2.checked = false;
-    // } 
-// }
-
 // CODE BELOW FOR LDB- Pretty much same coding as LTO but for LDB
 
 // Onclick learning option 2: LDB
-function learnDescribeBusiness() {
-    console.log("click");
-    //No Code yet
-}

@@ -100,7 +100,7 @@ main h2 {
 
 .progress-fill {
     height: 100%;
-    background-color: #27ae60;
+    background-color: rgb(39, 174, 96);
     border-radius: 4px;
 }
 
