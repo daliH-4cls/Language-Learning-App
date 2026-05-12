@@ -28,28 +28,6 @@ let questionsLTO = [
         answer: "I can not have peanuts, dairy and red meat."
     }
 ]
-// LTO is default, so non of the text has "LTO"
-
-// Lesson for  Learning to Describe Business/ LDB
-let questionsLDB = [
-    {
-        questionLDB: "What is this person talking about?",
-        exampleLDB: "Me gustaría conocer su modelo de negocio.",
-        option1LDB: "I would not like to know about your job.",
-        option2LDB: "I would like to know about your life.",
-        option3LDB: "I would like to know your business model.",
-        answerLDB: "I would like to know your business model."
-    },
-    {
-        questionLDB: "How do you respond to this question?",
-        exampleLDB: "¿Quiénes son tus competidores?",
-        option1LDB: "Mis competidores son Fry's y Sprouts.",
-        option2LDB: "Mis competidores son mis amigos.",
-        option3LDB: "Mis competidores son mi familia.",
-        answerLDB: "Mis competidores son Fry's y Sprouts."
-    }
-]
-// LDB is not default, so text will have "LDB"
 
 // Storing user answers
 let userAnswer = [];
@@ -162,10 +140,9 @@ function submitAnswer(event) {
 function fillingProgressLTO() {
     let fillProgress = document.getElementById("progress-fill");
     fillProgress.style.backgroundColor = rgb(39, 174, 96);
-    fillProgress.style.width = "25%";
 
     let textToStarted = document.getElementById("progress-text");
-    textToStarted.innerText = "25% complete";
+    textToStarted.innerText = "Completed for now";
 }
 
 function checkAnswerLTO() {
@@ -187,126 +164,10 @@ function checkAnswerLTO() {
     jumpQuestionLTO();
 }
 
-// CODE BELOW FOR LDB- Pretty much same coding as LTO but for LDB
-
-// Onclick learning option 2: LDB
-function learnDescribeBusiness() {
-    console.log("Lesson Learn to Describe Business selected");
-
-    jumpQuestionLDB();
-}
-
-// Necessary code for questions
-function jumpQuestionLDB() {
-    if (index >= questionsLDB.length) {
-        checkAnswerLDB();
-        return;
-    }
+// For the unselectable sub lesson because I gave up on that one
+function unselectableSubLessons() {
+    console.log("click");
     
-    // Keeping track of LTO questions
-    let currQuestionLDB = questionsLDB[index];
-
-    // Placing in the JS text to HTML text
-    let questionElementLDB = document.getElementById("questionForLDB");
-    questionElementLDB.innerText = currQuestionLDB.questionLDB;
-    questionElementLDB.style.color = "black";
-
-    let exampleElementLDB = document.getElementById("exampleLDB");
-    exampleElementLDB.innerText = currQuestionLDB.exampleLDB;
-    exampleElementLDB.style.color = "black";
-
-    let option1TextLDB = document.getElementById("option1textLDB");
-    option1TextLDB.innerText = currQuestionLDB.option1LDB;
-    option1TextLDB.style.color = "black";
-
-    let option2TextLDB = document.getElementById("option2textLDB");
-    option2TextLDB.innerText = currQuestionLDB.option2LDB;
-    option2TextLDB.style.color = "black";
-
-    let option3TextLDB = document.getElementById("option3textLDB");
-    option3TextLDB.innerText = currQuestionLDB.option3LDB;
-    option3TextLDB.style.color = "black";
+    alert("Not available, Learn to Take Oders only");
 }
-
-// Find correct user answer code function for option 1 and 2 of LTO
-// NEEDS FIXING
-function choseCorrectLDB1() {
-   if (option1LDB.innerText = questionsLDB.answer) {
-   option1LDB.checked = true;
-   }
-   else {
-    option1LDB.checked = false;
-   }
-}
-
-function choseCorrectLDB2() {
-    if (option2LDB.innerText = questionsLDB.answer) {
-       option2LDB.checked = true;
-    }
-    else {
-       option2LDB.checked = false;
-    } 
-}
-
-// Checking answer correction and if an answer was chosen
-function submitAnswer(event) {
-    event.preventDefault();
-
-    let option1 = document.getElementById("option1LDB");
-    let option2 = document.getElementById("option2LDB");
-    let option3 = document.getElementById("option3LDB");
-
-    if (option1LDB.checked) {
-        console.log("Option1 picked");
-        userAnswer.push(questionsLDB.option1);
-        choseCorrectLDB1();
-    }
-    else if (option2LDB.checked) {
-        console.log("Option2 picked");
-        userAnswer.push(questionsLDB.option2);
-        choseCorrectLDB2();
-    }
-    else if (option3LDB.checked) {
-        console.log("Option3 picked");
-        userAnswer.push(questionsLDB.option3);
-        option3LDB.checked = false;
-    }
-    else {
-        alert("Answer not selected...");
-        return;
-    }
-
-    // Code for answering question
-    index = index + 1;
-
-    jumpQuestionLDB();
-}
-
-// Storing progress (only once) REALLY NEEDS FIXING 
-function fillingProgressLTO() {
-    let fillProgress = document.getElementById("progress-fill");
-    fillProgress.style.backgroundColor = rgb(39, 174, 96);
-    fillProgress.style.width = "25%";
-
-    let textToStarted = document.getElementById("progress-text");
-    textToStarted.innerText = "25% complete";
-}
-
-function checkAnswerLDB() {
-    let  numCorrect = 0;
-    for (let i = 0; i < userAnswer.length; i++) {
-        let answerSelected = userAnswer[i];
-        let storeQuestion = questionsLDB[i];
-        if (answerSelected == questionsLDB.answer) {
-            numCorrect++;
-        }
-    }
-
-    //Standard protcal (correct answers and start over + updated progress)
-    alert("You have " + numCorrect + "/ " + questionsLTO.length + ". More lessons soon to arrive.");
-
-    fillingProgressLDB();
-    index = 0;
-    userAnswer = [];
-    jumpQuestionLDB();
-}
+// For some reason previous code was still linked to the LTO lessons even though it shouldn't have been?
