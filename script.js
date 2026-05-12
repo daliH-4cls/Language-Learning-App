@@ -1,4 +1,4 @@
-console.log("Script for INDEX and Lesson file starts here");
+console.log("Script for INDEX and Sub-Lesson file starts here");
 // Only 1 of the lessons is selectable for easy coding, all are just setups
 
 // Lesson for Learning to Take Orders/ LTO
@@ -39,7 +39,7 @@ let index = 0;
 function unselectableLessons() {
     console.log("click");
     
-    alert("Not available, Phone Conversations only");
+    alert("Not available, 'Phone Conversations' only");
 }
 
 // Onclick learning option 1: LTO
@@ -142,7 +142,7 @@ function fillingProgressLTO() {
     fillProgress.style.backgroundColor = rgb(39, 174, 96);
 
     let textToStarted = document.getElementById("progress-text");
-    textToStarted.innerText = "Completed for now";
+    textToStarted.innerText = "Completed- more soon";
 }
 
 function checkAnswerLTO() {
@@ -168,6 +168,6 @@ function checkAnswerLTO() {
 function unselectableSubLessons() {
     console.log("click");
     
-    alert("Not available, Learn to Take Oders only");
+    alert("Not available, 'Learn to Take Oders' only");
 }
 // For some reason previous code was still linked to the LTO lessons even though it shouldn't have been?
