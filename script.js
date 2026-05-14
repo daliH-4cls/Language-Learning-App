@@ -82,24 +82,33 @@ function jumpQuestionLTO() {
     option3Text.style.color = "black";
 }
 
-// Find correct user answer code function for option 1 and 2 of LTO
-// NEEDS FIXING
-function choseCorrectLTO1() {
-   if (option1.innerText = questionsLTO.answer) {
-   option1.checked = true;
-   }
-   else {
-    option1.checked = false;
-   }
-}
+// Storing option1 array equal to answer
+let answerEqualOption1 = option1.innerText == questionsLTO.answer;
+// Storing the times option 1 is correct
+let correctOption1 = "answerEqualOption1";
 
-function choseCorrectLTO2() {
-    if (option2.innerText = questionsLTO.answer) {
-       option2.checked = true;
+// Find correct user answer code function for option 1 and 2 of LTO
+function choseCorrectLTO1() {
+    if (userAnswer === correctOption1){
+        option1.checked = true;
     }
     else {
-       option2.checked = false;
-    } 
+        option1.checked = false
+    }
+}
+
+// Storing option2 array equal to answer
+let answerEqualOption2 = option2.innerText == questionsLTO.answer;
+// Storing the times option 1 is correct
+let correctOption2 = "answerEqualOption2";
+
+function choseCorrectLTO2() {
+    if (userAnswer === correctOption2){
+        option2.checked = true;
+    }
+    else {
+        option2.checked = false
+    }
 }
 
 // Checking answer correction and if an answer was chosen
@@ -139,7 +148,7 @@ function submitAnswer(event) {
 // Storing progress (only once) REALLY NEEDS FIXING 
 function fillingProgressLTO() {
     let fillProgress = document.getElementById("progress-fill");
-    fillProgress.style.backgroundColor = rgb(39, 174, 96);
+    fillProgress.style.backgroundColor = "green";
 
     let textToStarted = document.getElementById("progress-text");
     textToStarted.innerText = "Completed- more soon";

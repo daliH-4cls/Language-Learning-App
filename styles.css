@@ -102,6 +102,7 @@ main h2 {
     height: 100%;
     background-color: rgb(39, 174, 96);
     border-radius: 4px;
+    width: 100%;
 }
 
 .progress-text {
