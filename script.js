@@ -99,7 +99,7 @@ function choseCorrectLTO1() {
 
 // Storing option2 array equal to answer
 let answerEqualOption2 = option2.innerText == questionsLTO.answer;
-// Storing the times option 1 is correct
+// Storing the times option 2 is correct
 let correctOption2 = "answerEqualOption2";
 
 function choseCorrectLTO2() {
@@ -147,11 +147,12 @@ function submitAnswer(event) {
 
 // Storing progress (only once) REALLY NEEDS FIXING 
 function fillingProgressLTO() {
-    let fillProgress = document.getElementById("progress-fill");
+    let fillProgress = document.getElementById("progress-bar");
     fillProgress.style.backgroundColor = "green";
 
     let textToStarted = document.getElementById("progress-text");
-    textToStarted.innerText = "Completed- more soon";
+    textToStarted.innerText = "Completed- more soon - ";
+    textToStarted.style.color = "green";
 }
 
 function checkAnswerLTO() {
@@ -165,7 +166,7 @@ function checkAnswerLTO() {
     }
 
     //Standard protcal (correct answers and start over + updated progress)
-    alert("You have " + numCorrect + "/ " + questionsLTO.length + ". More lessons soon to arrive.");
+    alert("You have " + numCorrect + "/ " + questionsLTO.length + ". More lessons soon to arrive (not really).");
 
     fillingProgressLTO();
     index = 0;
@@ -179,4 +180,5 @@ function unselectableSubLessons() {
     
     alert("Not available, 'Learn to Take Oders' only");
 }
-// For some reason previous code was still linked to the LTO lessons even though it shouldn't have been?
+// The only thing I couldn't fix here was the amount of correct answers displayed
+// Additional note, current questions variables stopped it from functioning, so it's back to what is was

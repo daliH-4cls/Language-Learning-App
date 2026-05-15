@@ -120,3 +120,11 @@ a {
     text-decoration: none;
     color: black;
 }
+
+#progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
